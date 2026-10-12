@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MayaLink - Conectividad Tren Maya</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="maya-link-grid">
+      <header class="logo shadow-sm">
+        <i class="bi bi-train-front"></i> MayaLink
+      </header>
+
+      <section class="search shadow-sm">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0 text-muted">
+            <i class="bi bi-geo-alt text-danger"></i>
+          </span>
+          <input
+            type="text"
+            class="form-control border-start-0 ps-0"
+            placeholder="Buscar estación o ruta en Q. Roo"
+            aria-label="Buscar estación"
+          />
+          <button class="btn btn-outline-secondary" type="button">
+            Buscar
+          </button>
+        </div>
+      </section>
+
+      <section class="status shadow-sm">
+        <i class="bi bi-stoplights"></i> Servicio Operativo
+      </section>
+
+      <nav class="navigation shadow-sm px-3">
+        <a href="#" class="text-dark text-decoration-none fw-bold"
+          ><i class="bi bi-cash-stack ms-4 me-1 text-success"></i> Tarifario</a
+        >
+        <a href="#" class="text-dark text-decoration-none fw-bold">
+          <i class="bi bi-signpost-2 ms-4 me-1 text-light-emphasis"></i>
+          Tramos</a
+        >
+        <a href="#" class="text-dark text-decoration-none fw-bold">
+          <i class="bi bi-building-fill ms-4 me-1 text-light-emphasis"></i>
+          Estaciones</a
+        >
+        <a href="#" class="text-dark text-decoration-none fw-bold"
+          ><i class="bi bi-shield-exclamation ms-4 me-1 text-danger"></i>
+          Reportes</a
+        >
+      </nav>
+
+      <section class="hero-alert shadow-sm">
+        <div
+          class="alert alert-primary alert-dismissible fade show shadow-sm mb-0 align-items-center"
+          role="alert"
+        >
+          <i class="bi bi-info-circle"></i>
+          <strong
+            >Módulo de transporte y enlace activo en estaciones Tramo 5,6 y
+            7</strong
+          >
+          <button
+            type="button"
+            class="btn-close"
+            data-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      </section>
+
+      <main class="trip-form shadow-sm">
+        <h5 class="fw-bold text-secondary mb-3 d-flex align-items-center">
+          <i class="bi bi-calculator me-2 text-success"></i> Cotizador de
+          conectividad
+        </h5>
+        <form action="" id="calculatorForm">
+          <div class="form-floating mb-3">
+            <select
+              name="origen"
+              id="origen"
+              aria-label="Origen del pasajero"
+              class="form-select"
+            >
+              <option value="" selected disabled>
+                Selecciona el origen ..
+              </option>
+              <option value="estacion_ctm">Estacion de Chetumal</option>
+              <option value="aeropuerto_ctm">
+                Aeropuerto Internacional (CTM)
+              </option>
+              <option value="terminal_ctm">
+                Terminal ADO (Av. Insurgentes)
+              </option>
+            </select>
+            <label for="origen">Punto de partida / Terminal</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <select
+              name="destino"
+              id="destino"
+              aria-label="destino del pasajero"
+              class="form-select"
+            >
+              <option value="" selected disabled>
+                Selecciona la zona de llegada ....
+              </option>
+              <option value="centro_historico">
+                Centro Histórico / Explanada de la bandera
+              </option>
+              <option value="zona_restaurantera">
+                Zona restaurantera de Chetumal
+              </option>
+              <option value="laguna_milagros">Laguna Milagros</option>
+              <option value="bacalar">Pueblo Mágico de Bacalar</option>
+            </select>
+            <label for="destino">Destino final en Quintana Roo</label>
+          </div>
+
+          <div class="d-grid">
+            <button type="button" class="btn btn-success py-2 fw-semibold">
+              <i class="bi bi-search"></i> Consultar Tarifas oficiales
+            </button>
+          </div>
+        </form>
+      </main>
+
+      <section class="map-view shadow-sm d-flex flex-column">
+        <i class="bi bi-geo-alt display-5 mb-2"></i>
+        <span class="fw-bold">Visor del Mapa</span>
+        <small class="text-secondary">(Se integrará Google Maps)</small>
+      </section>
+
+      <section class="analytics shadow-sm">
+        <i class="bi bi-bar-chart display-6 mb-2"></i>
+        <p class="mb-0 fw-semibold">
+          Comparativo: Taxi Sindical vs. Transporte Colectivo
+        </p>
+        <small class="text-muted">
+          Renderización de Gráfica usando la libreria Chart.js en otra Sesión
+        </small>
+      </section>
+
+      <aside class="sidebar-tips shadow-sm">
+        <h6 class="fw-bold mb-1">
+          <i class="bi bi-stopwatch me-1"></i> Tiempos Estimados
+        </h6>
+        <p class="small mb-2">
+          Espera en Bahía de combis <strong>12 - 18 minutos</strong>
+        </p>
+        <div
+          class="progress height-8"
+          role="progressbar"
+          aria-label="Afluencia de pasajeros"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar" style="width: 25%"></div>
+        </div>
+        <small class="text-muted d-block mt-1"
+          >Afluencia moderada en estación</small
+        >
+      </aside>
+
+      <section class="station-services shadow-sm">
+        <h6 class="fw-bold text-secondary mb-3">
+          <i class="bi bi-bus-front me-1"></i> Servicios Disponible
+        </h6>
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center px-0 py-2"
+          >
+            <div>
+              <strong class="d-block text-dark"
+                >Combi Colectiva (Ruta 1)</strong
+              >
+            </div>
+            <small class="badge bg-primary rounted-pill">$12.00 MXN</small>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center px-0 py-2"
+          >
+            <div>
+              <strong class="d-block text-dark">Taxi de sitio regulado</strong>
+              <small class="text-muted">Bahía 3 Tarifa sujeta a zonas</small>
+            </div>
+            <small class="badge bg-secondary rounted-pill">$52.00 MXN</small>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center px-0 py-2"
+          >
+            <div>
+              <strong class="d-block text-dark">Enlace ADO Conecta</strong>
+              <small class="text-muted">Directo a Bacalar Aeropuerto</small>
+            </div>
+            <small class="badge bg-success rounted-pill">$85.00 MXN</small>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="footer shadow-sm">
+        <p class="mb-1">
+          <strong>MayaLink Chetumal</strong> 2026 Plataforma Ciudadana de
+          Movilidad Ferroviaria
+        </p>
+        <small class="text-secondary">Proyecto de Aplicaciones web</small>
+      </footer>
+    </div>
+
+    <!-- COMPONENTE OVERLAY -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

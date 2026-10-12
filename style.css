@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #212529;
+}
+.maya-link-grid > * {
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+/* mobile first dispositivos moviles primero (telefonos)*/
+
+.maya-link-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "logo"
+    "search"
+    "status"
+    "navigation"
+    "hero-alert"
+    "trip-form"
+    "map-view"
+    "analytics"
+    "sidebar-tips"
+    "station-services"
+    "footer";
+  gap: 10px;
+  padding: 10px;
+}
+
+.logo {
+  grid-area: logo;
+  background-color: #0b4f3f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.search {
+  grid-area: search;
+  background-color: #ffffff;
+}
+.status {
+  grid-area: status;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 6px;
+}
+.navigation {
+  grid-area: navigation;
+  background-color: #d4a373;
+  color: #2b2b2b;
+  gap: 20px;
+}
+.hero-alert {
+  grid-area: hero-alert;
+  background-color: #e9ecef;
+  min-height: 60px;
+}
+.trip-form {
+  grid-area: trip-form;
+  background-color: #ffffff;
+  min-height: 180px;
+}
+
+.map-view {
+  grid-area: map-view;
+  background-color: #cce3de;
+  min-height: 250px;
+}
+.analytics {
+  grid-area: analytics;
+  background-color: #ffffff;
+  min-height: 200px;
+}
+.sidebar-tips {
+  grid-area: sidebar-tips;
+  background-color: #fff3cd;
+  color: #664d03;
+  min-height: 100px;
+}
+.station-services {
+  grid-area: station-services;
+  background-color: #ffffff;
+}
+.footer {
+  grid-area: footer;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+/* tablets */
+@media (min-width: 768px) {
+  .maya-link-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "logo search"
+      "navigation navigation"
+      "hero-alert hero-alert"
+      "trip-form trip-form"
+      "map-view map-view"
+      "analytics sidebar-tips"
+      "station-services station-services"
+      "footer footer";
+  }
+  .status {
+    display: none;
+  }
+}
+
+/* escritorio */
+@media (min-width: 992px) {
+  .maya-link-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 2fr 1.2fr;
+    grid-template-areas:
+      "logo search search status"
+      "navigation navigation navigation navigation"
+      "hero-alert hero-alert hero-alert hero-alert"
+      "trip-form map-view map-view sidebar-tips"
+      "analytics analytics station-services station-services"
+      "footer footer footer footer";
+  }
+  .status {
+    display: block;
+  }
+}
+
+.height-8 {
+  height: 8px;
+}
